@@ -1,4 +1,6 @@
-app.views.ContactForm = Ext.extend(Ext.form.FormPanel, {
+Ext.define('app.view.Form', {
+    xtype:'contactform',
+    extend: 'Ext.form.FormPanel',
     dockedItems: [{
         xtype: 'toolbar',
         title: 'Edit contact',
@@ -10,7 +12,7 @@ app.views.ContactForm = Ext.extend(Ext.form.FormPanel, {
                 listeners: {
                     'tap': function () {
                         Ext.dispatch({
-                            controller: app.controllers.contacts,
+                            controller: app.controller.Contact,
                             action: 'show',
                             id: this.record.getId(),
                             animation: {type:'slide', direction:'right'}
@@ -28,7 +30,7 @@ app.views.ContactForm = Ext.extend(Ext.form.FormPanel, {
                         this.form.updateRecord(this.record, true);
                         this.record.save();
                         Ext.dispatch({
-                            controller: app.controllers.contacts,
+                            controller: app.controller.Contact,
                             action: 'show',
                             id: this.record.getId(),
                             animation: {type:'slide', direction:'right'}

@@ -1,4 +1,6 @@
-app.views.ContactsList = Ext.extend(Ext.Panel, {
+Ext.define('app.view.List', {
+    xtype:'contactlist',
+    extend: 'Ext.Panel',
     dockedItems: [{
         xtype: 'toolbar',
         title: 'Contacts'
@@ -6,20 +8,20 @@ app.views.ContactsList = Ext.extend(Ext.Panel, {
     layout: 'fit',
     items: [{
         xtype: 'list',
-        store: app.stores.contacts,
+        store: 'Contacts',
         itemTpl: '{givenName} {familyName}',
         grouped: true,
         indexBar: true,
         onItemDisclosure: function (record) {
             Ext.dispatch({
-                controller: app.controllers.contacts,
+                controller: app.controller.Contact,
                 action: 'show',
                 id: record.getId()
             });
         }
     }],
-    initComponent: function() {
-        app.stores.contacts.load();
-        app.views.ContactsList.superclass.initComponent.apply(this, arguments);
+    initialize: function() {
+        app.store.Contacts.load();
+        this.callParent(arguments);
     }
 });

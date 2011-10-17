@@ -1,4 +1,6 @@
-app.views.ContactDetail = Ext.extend(Ext.Panel, {
+Ext.define('app.view.Detail', {
+    xtype:'contactdetail',
+    extend:'Ext.Panel',
     dockedItems: [{
         xtype: 'toolbar',
         title: 'View contact',
@@ -9,7 +11,7 @@ app.views.ContactDetail = Ext.extend(Ext.Panel, {
                 listeners: {
                     'tap': function () {
                         Ext.dispatch({
-                            controller: app.controllers.contacts,
+                            controller: app.controller.Contact,
                             action: 'index',
                             animation: {type:'slide', direction:'right'}
                         });
@@ -24,7 +26,7 @@ app.views.ContactDetail = Ext.extend(Ext.Panel, {
                 listeners: {
                     'tap': function () {
                         Ext.dispatch({
-                            controller: app.controllers.contacts,
+                            controller: app.controller.Contact,
                             action: 'edit',
                             id: this.record.getId()
                         });
@@ -51,7 +53,7 @@ app.views.ContactDetail = Ext.extend(Ext.Panel, {
         {tpl:[
             '<h4>Search</h4>',
             '<div class="field"><span class="label">Google: </span><a href="http://www.google.com/m/search?q=%22{givenName}+{familyName}%22">\'{givenName} {familyName}\'</a></div>',
-            '<div class="field"><span class="label">Bing: </span><a href="http://m.bing.com/search?q=%22{givenName}+{familyName}%22">\'{givenName} {familyName}\'</a></div>',
+            '<div class="field"><span class="label">Bing: </span><a href="http://m.bing.com/search?q=%22{givenName}+{familyName}%22">\'{givenName} {familyName}\'</a></div>'
         ]}
     ],
     updateWithRecord: function(record) {

@@ -4,7 +4,7 @@
 //// Singleton ComponentManager to cache all control components for easy access.  These components are the actual Titanium controls or Argon Views
 //Argon.ComponentManager = function() {
 //    var components = {};
-//    var views = {};
+//    var view = {};
 //    var listeners = {};
 //    var subItems = {};
 //
@@ -32,7 +32,7 @@
 //                    return component.customConfig.id;
 //                }
 //                else if (component.name) {
-//                    if (views[component.name]) {
+//                    if (view[component.name]) {
 //                        return component.name;
 //                    }
 //                    else {
@@ -48,7 +48,7 @@
 //                    return component.customConfig.xtype;
 //                }
 //                else if (component.name) {
-//                    if (views[component.name]) {
+//                    if (view[component.name]) {
 //                        return 'argon view'
 //                    }
 //                }
@@ -94,7 +94,7 @@
 //                Ti.API.warn('Component ' + id + ' is already registered with the ComponentManager.  Overwriting old model with new one.');
 //            }
 //            components[id] = component;
-//            views[id] = true;
+//            view[id] = true;
 //            Ti.API.info(id + ' component has been registered with the component manager.');
 //
 //        },
@@ -112,9 +112,9 @@
 //            var componentObj = (Argon.isString(component) ? Argon.ComponentManager.get(component) : component);
 //            var viewObj = view;
 //            if (id) {
-//                if (views[id]) {
+//                if (view[id]) {
 //                    Ti.API.info('removing view ' + id + ' from component manager.');
-//                    delete views[id];
+//                    delete view[id];
 //                    // TODO: implement.  probably delete the view container and then some other cleanup stuff
 //                    viewObj = componentObj;
 //                    componentObj = componentObj.container;
