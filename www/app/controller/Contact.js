@@ -31,7 +31,7 @@ Ext.define('app.controller.Contact', {
         if (contact) {
             app.view.ContactDetail.updateWithRecord(contact);
             Ext.Viewport.setActiveItem(
-                    app.view.ContactDetail, options.animation
+                    app.view.ContactDetail//, options.animation
             );
         }
     },

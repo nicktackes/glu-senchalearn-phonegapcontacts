@@ -29,9 +29,5 @@ Ext.define('app.view.ContactList', {
                 }
             }
         ]
-    },
-    initialize: function() {
-//        app.store.Contacts.load();
-        this.callParent(arguments);
     }
 });
