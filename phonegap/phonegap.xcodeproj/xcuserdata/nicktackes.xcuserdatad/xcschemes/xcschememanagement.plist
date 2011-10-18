@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>glu-senchalearn-phonegapcontacts.xcscheme</key>
+		<key>phonegap.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A6C712BC144E05BB00A1EBFD</key>
+		<key>A69B7917144E18C200E68E4B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

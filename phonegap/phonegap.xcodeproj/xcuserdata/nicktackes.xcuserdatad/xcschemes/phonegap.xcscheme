@@ -13,10 +13,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A6C712BC144E05BB00A1EBFD"
-               BuildableName = "glu-senchalearn-phonegapcontacts.app"
-               BlueprintName = "glu-senchalearn-phonegapcontacts"
-               ReferencedContainer = "container:glu-senchalearn-phonegapcontacts.xcodeproj">
+               BlueprintIdentifier = "A69B7917144E18C200E68E4B"
+               BuildableName = "phonegap.app"
+               BlueprintName = "phonegap"
+               ReferencedContainer = "container:phonegap.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,41 +28,49 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A69B7917144E18C200E68E4B"
+            BuildableName = "phonegap.app"
+            BlueprintName = "phonegap"
+            ReferencedContainer = "container:phonegap.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
-      displayScaleIsEnabled = "NO"
-      displayScale = "1.00"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug">
+      buildConfiguration = "Debug"
+      debugDocumentVersioning = "YES"
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A6C712BC144E05BB00A1EBFD"
-            BuildableName = "glu-senchalearn-phonegapcontacts.app"
-            BlueprintName = "glu-senchalearn-phonegapcontacts"
-            ReferencedContainer = "container:glu-senchalearn-phonegapcontacts.xcodeproj">
+            BlueprintIdentifier = "A69B7917144E18C200E68E4B"
+            BuildableName = "phonegap.app"
+            BlueprintName = "phonegap"
+            ReferencedContainer = "container:phonegap.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      displayScaleIsEnabled = "NO"
-      displayScale = "1.00"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release">
+      buildConfiguration = "Release"
+      debugDocumentVersioning = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A6C712BC144E05BB00A1EBFD"
-            BuildableName = "glu-senchalearn-phonegapcontacts.app"
-            BlueprintName = "glu-senchalearn-phonegapcontacts"
-            ReferencedContainer = "container:glu-senchalearn-phonegapcontacts.xcodeproj">
+            BlueprintIdentifier = "A69B7917144E18C200E68E4B"
+            BuildableName = "phonegap.app"
+            BlueprintName = "phonegap"
+            ReferencedContainer = "container:phonegap.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

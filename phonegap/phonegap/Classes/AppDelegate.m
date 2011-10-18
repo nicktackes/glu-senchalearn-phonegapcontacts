@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  glu-senchalearn-phonegapcontacts
+//  phonegap
 //
 //  Created by Nick Tackes on 10/18/11.
 //  Copyright __MyCompanyName__ 2011. All rights reserved.
@@ -36,14 +36,14 @@
 	{
 		NSURL *url = [launchOptions objectForKey:[keyArray objectAtIndex:0]];
 		self.invokeString = [url absoluteString];
-		NSLog(@"glu-senchalearn-phonegapcontacts launchOptions = %@",url);
+		NSLog(@"phonegap launchOptions = %@",url);
 	}
 	
 	return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
 // this happens while we are running ( in the background, or from within our own app )
-// only valid if glu-senchalearn-phonegapcontacts.plist specifies a protocol to handle
+// only valid if phonegap.plist specifies a protocol to handle
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url 
 {
     // must call super so all plugins will get the notification, and their handlers will be called 
@@ -64,7 +64,7 @@
  */
 - (void)webViewDidFinishLoad:(UIWebView *)theWebView 
 {
-	// only valid if glu-senchalearn-phonegapcontacts.plist specifies a protocol to handle
+	// only valid if phonegap.plist specifies a protocol to handle
 	if(self.invokeString)
 	{
 		// this is passed before the deviceready event is fired, so you can access it in js when you receive deviceready

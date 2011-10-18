@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  glu-senchalearn-phonegapcontacts
+//  phonegap
 //
 //  Created by Nick Tackes on 10/18/11.
 //  Copyright __MyCompanyName__ 2011. All rights reserved.
@@ -19,7 +19,7 @@
 }
 
 // invoke string is passed to your app on launch, this is only valid if you 
-// edit glu-senchalearn-phonegapcontacts.plist to add a protocol
+// edit phonegap.plist to add a protocol
 // a simple tutorial can be found here : 
 // http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
 

@@ -1,6 +1,6 @@
 //
 //  main.m
-//  glu-senchalearn-phonegapcontacts
+//  phonegap
 //
 //  Created by Nick Tackes on 10/18/11.
 //  Copyright __MyCompanyName__ 2011. All rights reserved.

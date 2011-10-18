@@ -9,7 +9,7 @@ Ext.define('app.view.Main', {
         fullscreen: true,
         layout: 'card',
         activeItem: 0,
-        cardSwitchAnimation: 'slide',
+//        cardSwitchAnimation: 'slide',
         items: [
             {
                 xtype: 'contactlist'
