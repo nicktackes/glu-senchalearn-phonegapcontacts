@@ -1,4 +1,4 @@
-Ext.define('app.view.Detail', {
+Ext.define('app.view.ContactDetail', {
     xtype:'contactdetail',
     extend:'Ext.Panel',
     dockedItems: [{

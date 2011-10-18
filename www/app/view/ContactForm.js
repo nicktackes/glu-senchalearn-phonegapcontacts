@@ -1,4 +1,4 @@
-Ext.define('app.view.Form', {
+Ext.define('app.view.ContactForm', {
     xtype:'contactform',
     extend: 'Ext.form.FormPanel',
     dockedItems: [{

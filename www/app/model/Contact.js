@@ -12,42 +12,59 @@ Ext.define("app.model.Contact", {
         },
         read: function(operation, callback, scope) {
             var thisProxy = this;
-            navigator.contacts.find(
-                    ['id', 'name', 'emails', 'phoneNumbers', 'addresses'],
-                    function(deviceContacts) {
-                        //loop over deviceContacts and create Contact model instances
-                        var contacts = [];
-                        for (var i = 0; i < deviceContacts.length; i++) {
-                            var deviceContact = deviceContacts[ i ];
-                            var contact = new thisProxy.model({
-                                id: deviceContact.id,
-                                givenName: deviceContact.name.givenName,
-                                familyName: deviceContact.name.familyName,
-                                emails: deviceContact.emails,
-                                phoneNumbers: deviceContact.phoneNumbers
+            if (navigator.contacts) {
+                navigator.contacts.find(
+                        ['id', 'name', 'emails', 'phoneNumbers', 'addresses'],
+                        function(deviceContacts) {
+                            //loop over deviceContacts and create Contact model instances
+                            var contacts = [];
+                            for (var i = 0; i < deviceContacts.length; i++) {
+                                var deviceContact = deviceContacts[ i ];
+                                var contact = new thisProxy.model({
+                                    id: deviceContact.id,
+                                    givenName: deviceContact.name.givenName,
+                                    familyName: deviceContact.name.familyName,
+                                    emails: deviceContact.emails,
+                                    phoneNumbers: deviceContact.phoneNumbers
+                                });
+                                contact.deviceContact = deviceContact;
+                                contacts.push(contact);
+                            }
+                            //return model instances in a result set
+                            operation.resultSet = new Ext.data.ResultSet({
+                                records: contacts,
+                                total  : contacts.length,
+                                loaded : true
                             });
-                            contact.deviceContact = deviceContact;
-                            contacts.push(contact);
-                        }
-                        //return model instances in a result set
-                        operation.resultSet = new Ext.data.ResultSet({
-                            records: contacts,
-                            total  : contacts.length,
-                            loaded : true
-                        });
-                        //announce success
-                        operation.setSuccessful();
-                        operation.setCompleted();
-                        //finish with callback
-                        if (typeof callback == "function") {
-                            callback.call(scope || thisProxy, operation);
-                        }
-                    },
-                    function (e) {
-                        console.log('Error fetching contacts');
-                    },
-                    {multiple: true}
-            );
+                            //announce success
+                            operation.setSuccessful();
+                            operation.setCompleted();
+                            //finish with callback
+                            if (typeof callback == "function") {
+                                callback.call(scope || thisProxy, operation);
+                            }
+                        },
+                        function (e) {
+                            console.log('Error fetching contacts');
+                        },
+                        {multiple: true}
+                );
+            }
+            else {
+                //return model instances in a result set
+                operation.resultSet = new Ext.data.ResultSet({
+                    records: [],
+                    total  : 0,
+                    loaded : true
+                });
+                //announce success
+                operation.setSuccessful();
+                operation.setCompleted();
+                //finish with callback
+                if (typeof callback == "function") {
+                    callback.call(scope || thisProxy, operation);
+                }
+            }
         },
         update: function(operation, callback, scope) {
             operation.setStarted();

@@ -1,10 +1,9 @@
 Ext.define('app.view.Main', {
-    xtype:'mainview',
     extend: 'Ext.Container',
     requires: [
-        'app.view.Detail',
-        'app.view.Form',
-        'app.view.List'
+        'app.view.ContactDetail',
+        'app.view.ContactForm',
+        'app.view.ContactList'
     ],
     config: {
         fullscreen: true,

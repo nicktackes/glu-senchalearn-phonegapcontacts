@@ -2,12 +2,12 @@ Ext.define('app.controller.Contact', {
     extend: 'Ext.app.Controller',
     views : [
         'Main',
-        'Detail',
-        'List',
-        'Form'
+        'ContactDetail',
+        'ContactForm',
+        'ContactList'
     ],
     stores:[
-            'Contacts'
+        'Contacts'
     ],
     refs: [
         {
@@ -17,28 +17,31 @@ Ext.define('app.controller.Contact', {
             autoCreate: true
         }
     ],
+    init: function() {
+        this.getMainView().create();
+    },
     index: function(options) {
         Ext.Viewport.setActiveItem(
-            app.view.List, options.animation
+                app.view.ContactList, options.animation
         );
     },
     show: function(options) {
         var id = parseInt(options.id),
-            contact = app.store.Contacts.getById(id);
+                contact = app.store.Contacts.getById(id);
         if (contact) {
-            app.view.Detail.updateWithRecord(contact);
+            app.view.ContactDetail.updateWithRecord(contact);
             Ext.Viewport.setActiveItem(
-                app.view.Detail, options.animation
+                    app.view.ContactDetail, options.animation
             );
         }
     },
     edit: function(options) {
         var id = parseInt(options.id),
-            contact = app.store.Contacts.getById(id);
+                contact = app.store.Contacts.getById(id);
         if (contact) {
-            app.view.Form.updateWithRecord(contact);
+            app.view.ContactForm.updateWithRecord(contact);
             Ext.Viewport.setActiveItem(
-                app.view.Form, options.animation
+                    app.view.ContactForm, options.animation
             );
         }
     }
