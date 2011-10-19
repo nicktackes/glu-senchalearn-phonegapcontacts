@@ -26,9 +26,11 @@ Ext.define('app.controller.Contact', {
         );
     },
     show: function(options) {
+        console.log('clicked record ' + options.id);
         var id = parseInt(options.id),
                 contact = app.store.Contacts.getById(id);
         if (contact) {
+            console.log('contact has been located.');
             app.view.ContactDetail.updateWithRecord(contact);
             Ext.Viewport.setActiveItem(
                     app.view.ContactDetail//, options.animation

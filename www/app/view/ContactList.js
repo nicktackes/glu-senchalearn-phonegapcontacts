@@ -4,7 +4,7 @@ Ext.define('app.view.ContactList', {
     config:{
         layout: 'fit',
         listeners:{
-            'render': function(panel) {
+            'painted': function(panel) {
                 console.log('list rendered');
             }
         },
@@ -21,11 +21,12 @@ Ext.define('app.view.ContactList', {
                 grouped: true,
                 indexBar: true,
                 onItemDisclosure: function (record) {
-                    Ext.dispatch({
-                        controller: app.controller.Contact,
-                        action: 'show',
-                        id: record.getId()
-                    });
+                    this.getController('Contract').show({id: record.getId()});
+//                    Ext.dispatch({
+//                        controller: app.controller.Contact,
+//                        action: 'show',
+//                        id: record.getId()
+//                    });
                 }
             }
         ]

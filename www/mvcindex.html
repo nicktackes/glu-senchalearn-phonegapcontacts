@@ -16,7 +16,9 @@
 -->
         <script type="text/javascript" src="phonegap-1.1.0.js"></script>
         <script type="text/javascript">
+            function onBodyLoad(){
                 document.addEventListener("deviceready", app.mainLaunch, false);
+            }
         </script>
 
         <style>
@@ -45,5 +47,5 @@
             }
         </style>
 
-    </head><body></body>
+    </head><body onload="onBodyLoad()"></body>
 </html>
